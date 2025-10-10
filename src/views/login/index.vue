@@ -1,10 +1,12 @@
 <script setup lang="ts">
+	import { SYS_TITLE } from '@/utils/constant.ts'
+
 	import { LoginLeftContent, LoginRightContent } from './componnets'
 </script>
 
 <template>
 	<div class="login-container">
-		<header class="login-title">协同文档管理系统</header>
+		<header class="login-title">{{ SYS_TITLE }}</header>
 		<LoginLeftContent />
 		<LoginRightContent />
 	</div>

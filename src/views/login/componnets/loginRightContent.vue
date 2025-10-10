@@ -35,14 +35,14 @@
 						:rules="nameRules"
 						label="工号"
 						required
-					></v-text-field>
+					/>
 
 					<v-text-field
 						v-model="form.password"
 						:rules="codeRules"
 						label="密码"
 						required
-					></v-text-field>
+					/>
 
 					<div class="d-flex">
 						<v-btn class="mt-4" color="success" block @click="handleLogin">

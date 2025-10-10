@@ -1,4 +1,6 @@
-import 'normalize.css'
+import ArcoVue from '@arco-design/web-vue'
+import '@arco-design/web-vue/dist/arco.css'
+import '@assets/styles/index'
 import { createPinia } from 'pinia'
 import 'unfonts.css'
 import { createApp } from 'vue'
@@ -6,7 +8,6 @@ import { createApp } from 'vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import 'vuetify/styles'
 
 import router from '@/router'
 
@@ -19,4 +20,4 @@ const vuetify = createVuetify({
 	directives
 })
 
-app.use(createPinia()).use(router).use(vuetify).mount('#app')
+app.use(createPinia()).use(ArcoVue).use(router).use(vuetify).mount('#app')

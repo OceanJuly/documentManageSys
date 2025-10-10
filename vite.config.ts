@@ -1,6 +1,6 @@
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { URL, fileURLToPath } from 'node:url'
+import path from 'path'
 import ViteFonts from 'unplugin-fonts/vite'
 import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -25,7 +25,8 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			'@': fileURLToPath(new URL('./src', import.meta.url))
+			'@': path.resolve(__dirname, './src'),
+			'@assets': path.resolve(__dirname, './src/assets')
 		}
 	},
 	server: {

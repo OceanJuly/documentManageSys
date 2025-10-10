@@ -1,6 +1,6 @@
 import { type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 
-import Dashboard from '@/views/dashboard/index.vue'
+import Layout from '@/layout/index.vue'
 import NotFoundPage from '@/views/exception/404.vue'
 import Login from '@/views/login/index.vue'
 
@@ -20,11 +20,19 @@ const routes: Array<RouteRecordRaw> = [
 		}
 	},
 	{
-		path: '/dashboard',
-		component: Dashboard,
-		meta: {
-			title: '首页'
-		}
+		path: '/',
+		redirect: '/dashboard',
+		component: Layout,
+		children: [
+			{
+				path: '/dashboard',
+				name: 'Dashboard',
+				component: () => import('@/views/dashboard/index.vue'),
+				meta: {
+					title: 'Dashboard'
+				}
+			}
+		]
 	}
 ]
 
